@@ -12,9 +12,9 @@ void heapify(int tam[], int n, int i) {
         maior = dir;
 
     if (maior != i) {
-        int temp = tam[i];
+        int aux = tam[i];
         tam[i] = tam[maior];
-        tam[maior] = temp;
+        tam[maior] = aux;
 
         heapify(tam, n, maior);
     }
@@ -25,9 +25,9 @@ void heapSort(int tam[], int n) {
         heapify(tam, n, i);
 
     for (int i = n - 1; i > 0; i--) {
-        int temp = tam[0];
+        int aux = tam[0];
         tam[0] = tam[i];
-        tam[i] = temp;
+        tam[i] = aux;
 
         heapify(tam, i, 0);
     }
