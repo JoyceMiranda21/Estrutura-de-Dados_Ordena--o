@@ -13,14 +13,14 @@ void bubbleSort(int tam[], int n) {
 }
 
 int main() {
-    int arr[6] = {10, 6, 9, 7, 8, 11};
+    int tam[6] = {10, 6, 9, 7, 8, 11};
     int n = 6;
 
-    bubbleSort(arr, n);
+    bubbleSort(tam, n);
 
     printf("vetor ordenado: ");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", tam[i]);
     }
     return 0;
 }
