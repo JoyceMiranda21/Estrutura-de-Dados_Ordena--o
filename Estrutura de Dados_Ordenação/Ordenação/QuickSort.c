@@ -1,31 +1,31 @@
 #include <stdio.h>
 
-void swap(int* a, int* b) {
+void troca(int* a, int* b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-int partition(int tam[], int low, int high) {
-    int pivot = tam[high];
-    int i = (low - 1);
+int partir(int tam[], int men, int mai) {
+    int pivot = tam[mai];
+    int i = (men - 1);
 
-    for (int j = low; j <= high - 1; j++) {
+    for (int j = men; j <= mai - 1; j++) {
         if (tam[j] < pivot) {
             i++;
-            swap(&tam[i], &tam[j]);
+            troca(&tam[i], &tam[j]);
         }
     }
-    swap(&tam[i + 1], &tam[high]);
+    troca(&tam[i + 1], &tam[mai]);
     return (i + 1);
 }
 
-void quickSort(int tam[], int low, int high) {
-    if (low < high) {
-        int pi = partition(tam, low, high);
+void quickSort(int tam[], int men, int mai) {
+    if (men < mai) {
+        int pi = partir(tam, men, mai);
 
-        quickSort(tam, low, pi - 1);
-        quickSort(tam, pi + 1, high);
+        quickSort(tam, men, pi - 1);
+        quickSort(tam, pi + 1, mai);
     }
 }
 
