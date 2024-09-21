@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 void shellSort(int tam[], int n) {
-    for (int s = n / 2; s > 0; s /= 2) {
-        for (int i = s; i < n; i++) {
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        for (int i = gap; i < n; i++) {
             int aux = tam[i];
             int j;
-            for (j = i; j >= s && tam[j - s] > aux; j -= s) {
-                tam[j] = tam[j - s];
+            for (j = i; j >= gap && tam[j - gap] > aux; j -= gap) {
+                tam[j] = tam[j - gap];
             }
             tam[j] = aux;
         }
